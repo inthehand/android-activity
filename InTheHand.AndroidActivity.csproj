@@ -1,0 +1,43 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" />
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;monoandroid10.0</TargetFrameworks>
+		<RootNamespace>InTheHand.Android</RootNamespace>
+		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
+		<Company>In The Hand Ltd</Company>
+		<Authors>Peter Foot</Authors>
+		<Product>InTheHand.AndroidAssembly</Product>
+		<Version>1.0.0</Version>
+		<IncludeSymbols>true</IncludeSymbols>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+		<RepositoryUrl>https://github.com/inthehand/android-activity</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageProjectUrl>https://github.com/inthehand/android-activity</PackageProjectUrl>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<Copyright>Copyright (c) 2023 In The Hand Ltd</Copyright>
+		<Description>A dependency free method of determining the current activity in a cross-platform app running on Android.</Description>
+		<FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<AssemblyName>InTheHand.AndroidAssembly</AssemblyName>
+		<PackageIcon>packageicon.png</PackageIcon>
+		<PackageTags>android</PackageTags>
+		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">True</GenerateDocumentationFile>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="MSBuild.Sdk.Extras" Version="3.0.44" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="packageicon.png" Pack="true" PackagePath=""/>
+	</ItemGroup>
+</Project>
