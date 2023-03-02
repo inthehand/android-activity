@@ -6,7 +6,7 @@
 		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
 		<Company>In The Hand Ltd</Company>
 		<Authors>Peter Foot</Authors>
-		<Product>InTheHand.AndroidAssembly</Product>
+		<Product>InTheHand.AndroidActivity</Product>
 		<Version>1.0.0</Version>
 		<IncludeSymbols>true</IncludeSymbols>
 		<DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
 		<Description>A dependency free method of determining the current activity in a cross-platform app running on Android.</Description>
 		<FileVersion>1.0.0.0</FileVersion>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<AssemblyName>InTheHand.AndroidAssembly</AssemblyName>
+		<AssemblyName>InTheHand.AndroidActivity</AssemblyName>
 		<PackageIcon>packageicon.png</PackageIcon>
 		<PackageTags>android</PackageTags>
 		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
