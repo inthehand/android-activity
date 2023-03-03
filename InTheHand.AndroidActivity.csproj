@@ -2,12 +2,12 @@
 	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" />
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-android;monoandroid10.0</TargetFrameworks>
-		<RootNamespace>InTheHand.Android</RootNamespace>
+		<RootNamespace>InTheHand</RootNamespace>
 		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
 		<Company>In The Hand Ltd</Company>
 		<Authors>Peter Foot</Authors>
 		<Product>InTheHand.AndroidActivity</Product>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<IncludeSymbols>true</IncludeSymbols>
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>portable</DebugType>
