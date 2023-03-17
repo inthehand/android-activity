@@ -11,4 +11,22 @@ On unsupported frameworks you can manually set the CurrentActivity by assigning 
  - .NET MAUI
  - Uno Platform
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/InTheHand.AndroidActivity)
+## Other Frameworks
+
+ - Avalonia UI
+ - Xamarin Android
+ - .NET Android (non-MAUI)
+ 
+ Set the current Activity manually in the main OnCreate method:-
+ 
+```
+protected override void OnCreate(Bundle savedInstanceState)
+{
+   // provide reference to current activity
+   InTheHand.AndroidActivity.CurrentActivity = this;
+
+   base.OnCreate(savedInstanceState);
+}
+```
+
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/InTheHand.AndroidActivity)](https://img.shields.io/nuget/vpre/InTheHand.AndroidActivity)
