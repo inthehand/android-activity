@@ -29,4 +29,4 @@ protected override void OnCreate(Bundle savedInstanceState)
 }
 ```
 
-[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/InTheHand.AndroidActivity)](https://img.shields.io/nuget/vpre/InTheHand.AndroidActivity)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/InTheHand.AndroidActivity)](https://www.nuget.org/packages/InTheHand.AndroidActivity)
