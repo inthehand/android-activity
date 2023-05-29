@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InTheHand.AndroidActivity", "InTheHand.AndroidActivity.csproj", "{574EFC6C-527B-4EEB-9FB5-EEAD14D4C277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InTheHand.AndroidActivity", "InTheHand.AndroidActivity.csproj", "{574EFC6C-527B-4EEB-9FB5-EEAD14D4C277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Example.Android", "..\Xamarin-Example\Xamarin-Example.Android\Xamarin-Example.Android.csproj", "{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Example", "..\Xamarin-Example\Xamarin-Example\Xamarin-Example.csproj", "{178279DD-076E-41BA-878E-31207522B71A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,16 @@ Global
 		{574EFC6C-527B-4EEB-9FB5-EEAD14D4C277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{574EFC6C-527B-4EEB-9FB5-EEAD14D4C277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{574EFC6C-527B-4EEB-9FB5-EEAD14D4C277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B78F1D-2B63-46A9-A21D-72BEB4B3D263}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{178279DD-076E-41BA-878E-31207522B71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178279DD-076E-41BA-878E-31207522B71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178279DD-076E-41BA-878E-31207522B71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178279DD-076E-41BA-878E-31207522B71A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

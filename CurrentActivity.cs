@@ -7,6 +7,8 @@
 
 using Android.App;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace InTheHand
 {
@@ -15,7 +17,8 @@ namespace InTheHand
     /// </summary>
     public static class AndroidActivity
     {
-        static AndroidActivity()
+
+        private static void TryGetActivity()
         {
             // when used by a cross-platform UI framework like MAUI or Uno we need to get the current Activity in order to launch the picker UI
             // for a "native" app you can use the Android specific RequestDevice overload which accepts a Context
@@ -39,21 +42,43 @@ namespace InTheHand
 #else
             // check for Xamarin.Essentials without taking a hard dependency
             var t = Type.GetType("Xamarin.Essentials.Platform, Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", false, true);
+            
             if (t != null)
             {
-                CurrentActivity = (Activity)t.GetProperty("CurrentActivity", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public).GetValue(null);
+                try
+                {
+                    var task = (Task<Activity>)t.GetMethod("WaitForActivityAsync", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public).Invoke(null, new object[] { null});
+                    task.Wait();
+
+                    CurrentActivity = (Activity)t.GetProperty("CurrentActivity", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public).GetValue(null);
+                }
+                catch { }
             }
 #endif
 
-            if (CurrentActivity == null)
+            if (currentActivity == null)
                 System.Diagnostics.Debug.WriteLine("CurrentActivity:Unknown");
             else
                 System.Diagnostics.Debug.WriteLine($"CurrentActivity:{CurrentActivity.GetType().FullName}");
         }
 
+        private static Activity currentActivity;
         /// <summary>
         /// The current Android activity, or null if not determined.
         /// </summary>
-        public static Activity CurrentActivity { get; set; }
+        public static Activity CurrentActivity
+        {
+            get
+            {
+                if (currentActivity == null)
+                    TryGetActivity();
+
+                return currentActivity;
+            }
+            set
+            {
+                currentActivity = value;
+            }
+        }
     }
 }
