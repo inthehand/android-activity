@@ -1,23 +1,18 @@
 # InTheHand.AndroidActivity
-Provides a mechanism to determine the main activity in cross-platform projects
+Provides a mechanism to store a reference to the main activity in cross-platform projects
 
 ## Usage
-In your cross-platform code you can reference this package. Query the AndroidActivity.CurrentActivity property to return the current activity on supported cross-platform frameworks.
-
-On unsupported frameworks you can manually set the CurrentActivity by assigning it inside your platform-specific MainActivity.cs or similar.
+The library is only required on Android, but can be used by cross-platform libraries such as 32feet.NET in Xamarin or .NET MAUI projects. You need to set the CurrentActivity by assigning it inside your platform-specific MainActivity.cs or similar.
 
 ## Supported Frameworks
  - Xamarin Forms
  - .NET MAUI
  - Uno Platform
-
-## Other Frameworks
-
- - Avalonia UI
  - Xamarin Android
  - .NET Android (non-MAUI)
+ - Avalonia UI
  
- Set the current Activity manually in the main OnCreate method:-
+ Set the current Activity in your MainActivity OnCreate method:-
  
 ```
 protected override void OnCreate(Bundle savedInstanceState)

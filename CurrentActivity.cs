@@ -7,6 +7,7 @@
 
 using Android.App;
 using System;
+using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -17,11 +18,24 @@ namespace InTheHand
     /// </summary>
     public static class AndroidActivity
     {
+        private static ActivityLifecycleCallbacks _callbacks = new ActivityLifecycleCallbacks();
+
+        static AndroidActivity()
+        {
+            ((Application)Application.Context).RegisterActivityLifecycleCallbacks(_callbacks);
+        }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void Init()
+        {
+        }
 
         private static void TryGetActivity()
         {
             // when used by a cross-platform UI framework like MAUI or Uno we need to get the current Activity in order to launch the picker UI
             // for a "native" app you can use the Android specific RequestDevice overload which accepts a Context
+
+            // This is a backup if Init wasn't passed an Activity or lifecycle callbacks didn't pickup the activity.
 
 #if NET6_0_OR_GREATER
             // check for Uno without taking a hard dependency
@@ -64,8 +78,12 @@ namespace InTheHand
 
         private static Activity currentActivity;
         /// <summary>
-        /// The current Android activity, or null if not determined.
+        /// The current Android activity, or null if not set.
         /// </summary>
+        /// <remarks>
+        /// Set this property from your MainActivity OnCreate method to ensure that all libraries which depend on a reference to the activity will work as expected.
+        /// </remarks>
+        /// <value>The main activity for your application. This will be the MainActivity in your Xamarin/.NET application.</value>
         public static Activity CurrentActivity
         {
             get
@@ -77,7 +95,10 @@ namespace InTheHand
             }
             set
             {
-                currentActivity = value;
+                if (value != null && currentActivity == null)
+                {
+                    currentActivity = value;
+                }
             }
         }
     }
