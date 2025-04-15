@@ -1,13 +1,13 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
-	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" />
+	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.2.25" />
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;net7.0-android;monoandroid11.0;monoandroid10.0;monoandroid9.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;monoandroid11.0</TargetFrameworks>
 		<RootNamespace>InTheHand</RootNamespace>
 		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
 		<Company>In The Hand Ltd</Company>
 		<Authors>Peter Foot</Authors>
 		<Product>InTheHand.AndroidActivity</Product>
-		<Version>1.0.4</Version>
+		<Version>1.0.5</Version>
 		<IncludeSymbols>true</IncludeSymbols>
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>portable</DebugType>
@@ -17,7 +17,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageProjectUrl>https://github.com/inthehand/android-activity</PackageProjectUrl>
 		<PackageLicenseUrl></PackageLicenseUrl>
-		<Copyright>Copyright (c) 2023 In The Hand Ltd</Copyright>
+		<Copyright>Copyright (c) 2023-25 In The Hand Ltd</Copyright>
 		<Description>A dependency free method of determining the current activity in a cross-platform app running on Android.</Description>
 		<FileVersion>1.0.0.0</FileVersion>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -28,7 +28,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageReleaseNotes>Improved instructions for MainActivity OnCreate.</PackageReleaseNotes>
+		<PackageReleaseNotes>.NET 8.0 Update</PackageReleaseNotes>
 		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">True</GenerateDocumentationFile>
 	</PropertyGroup>
 	<ItemGroup>
@@ -36,8 +36,8 @@
 	  <None Remove="LICENSE" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.25" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
 		<PackageReference Include="MSBuild.Sdk.Extras" Version="3.0.44" PrivateAssets="All" />
 	</ItemGroup>
 	<ItemGroup>

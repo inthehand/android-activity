@@ -7,19 +7,17 @@
 
 using Android.App;
 using Android.OS;
-using System;
 
 namespace InTheHand
 {
-    internal sealed class ActivityLifecycleCallbacks : Java.Lang.Object, Application.IActivityLifecycleCallbacks, IDisposable
+    internal sealed class ActivityLifecycleCallbacks : Java.Lang.Object, Application.IActivityLifecycleCallbacks
     {
         private void SetCurrentActivityIfRequired(Activity activity)
         {
-            if (AndroidActivity.CurrentActivity == null)
-            {
-                System.Diagnostics.Debug.WriteLine("Setting CurrentActivity");
-                AndroidActivity.CurrentActivity = activity;
-            }
+            if (AndroidActivity.CurrentActivity != null) return;
+
+            System.Diagnostics.Debug.WriteLine("Setting CurrentActivity");
+            AndroidActivity.CurrentActivity = activity;
         }
 
         public void OnActivityCreated(Activity activity, Bundle savedInstanceState)

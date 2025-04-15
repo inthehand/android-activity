@@ -8,7 +8,6 @@
 using Android.App;
 using System;
 using System.ComponentModel;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace InTheHand
@@ -18,11 +17,11 @@ namespace InTheHand
     /// </summary>
     public static class AndroidActivity
     {
-        private static ActivityLifecycleCallbacks _callbacks = new ActivityLifecycleCallbacks();
+        private static readonly ActivityLifecycleCallbacks Callbacks = new ActivityLifecycleCallbacks();
 
         static AndroidActivity()
         {
-            ((Application)Application.Context).RegisterActivityLifecycleCallbacks(_callbacks);
+            ((Application)Application.Context).RegisterActivityLifecycleCallbacks(Callbacks);
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
